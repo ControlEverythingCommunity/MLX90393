@@ -2,4 +2,5 @@ lang:java
 lang:python
 lang:arduino
 lang:particle
+lang:C
 sku:MLX90393_I2CS

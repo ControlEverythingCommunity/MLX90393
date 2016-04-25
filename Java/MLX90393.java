@@ -20,7 +20,11 @@ public class MLX90393
 
 		// Write register command, AH = 0x00, AL = 0x5C, Hall plate spinning rate = DEFAULT, GAIN_SEL = 5
 		// Address register, (0x00 << 2)
-		byte[] config = {0x60, 0x00, 0x5C, 0x00};
+		byte[] config = new byte[4];
+		config[0] = 0x60;
+		config[1] = 0x00;
+		config[2] = 0x5C;
+		config[3] = 0x00;
 		device.write(config, 0, 4);
 
 		byte[] data = new byte[7];
@@ -30,7 +34,10 @@ public class MLX90393
 
 		// Write register command, AH = 0x02, AL = 0xB4, RES for magnetic measurement = 0
 		// Address register, (0x02 << 2)
-		config = {0x60, 0x02, 0xB4, 0x08};
+		config[0] = 0x60;
+		config[1] = 0x02;
+		config[2] = (byte)0xB4;
+		config[3] = 0x08;
 		device.write(config, 0, 4);
 
 		// Read 1 byte

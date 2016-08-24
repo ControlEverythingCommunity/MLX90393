@@ -66,7 +66,7 @@ void main()
 	// status, xMag msb, xMag lsb, yMag msb, yMag lsb, zMag msb, zMag lsb
 	if(read(file, data, 7) != 7)
 	{
-		printf("Erorr : Input/output Erorr \n");
+		printf("Error : Input/Output error \n");
 	}
 	else
 	{

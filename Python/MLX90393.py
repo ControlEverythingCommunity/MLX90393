@@ -46,19 +46,19 @@ time.sleep(0.5)
 data = bus.read_i2c_block_data(0x0C, 0x4E, 7)
 
 # Convert the data
-xGyro = data[1] * 256 + data[2]
-if xGyro > 32767 :
-	xGyro -= 65536
+xMag = data[1] * 256 + data[2]
+if xMag > 32767 :
+	xMag -= 65536
 
-yGyro = data[3] * 256 + data[4]
-if yGyro > 32767 :
-	yGyro -= 65536
+yMag = data[3] * 256 + data[4]
+if yMag > 32767 :
+	yMag -= 65536
 
-zGyro = data[5] * 256 + data[6]
-if zGyro > 32767 :
-	zGyro -= 65536
+zMag = data[5] * 256 + data[6]
+if zMag > 32767 :
+	zMag -= 65536
 
 # Output data to screen
-print "Magnetic Field in X-Axis : %d" %xGyro
-print "Magnetic Field in Y-Axis : %d" %yGyro
-print "Magnetic Field in Z-Axis : %d" %zGyro
+print "Magnetic Field in X-Axis : %d" %xMag
+print "Magnetic Field in Y-Axis : %d" %yMag
+print "Magnetic Field in Z-Axis : %d" %zMag
